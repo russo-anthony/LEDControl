@@ -1,2 +1,2 @@
 # LEDControl
-Android App controls LED on PSoC Micro-controller board through Bluetooth wireless link
+Android App controls High Intensity LED on PSoC Micro-controller board through Bluetooth wireless link
