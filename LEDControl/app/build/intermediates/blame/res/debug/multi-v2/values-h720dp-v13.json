@@ -1,7 +1,22 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\Anthony\\My Documents\\School\\TCNJ\\Junior\\Embedded Systems\\Term Project\\FinalProject\\LEDControl\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
+            "outputFile": "E:\\Anthony\\My Documents\\School\\TCNJ\\Senior\\LEDControl\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Anthony\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\bfdf65254721875e65d9abd33632599e\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "66",
+                        "endOffsets": "117"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "E:\\Anthony\\My Documents\\School\\TCNJ\\Junior\\Embedded Systems\\Term Project\\LEDControl\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Anthony\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\64e896d8b477e9996ca735f08b58356f\\res\\values-h720dp-v13\\values-h720dp-v13.xml",

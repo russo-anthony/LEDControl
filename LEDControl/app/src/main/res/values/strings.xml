@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Bluetooth LED Control</string>
+
+    <string name="Start">Start Bluetooth</string>
+    <string name="GetChars">Get Characteristics</string>
+    <string name="Disconnect">Disconnect</string>
+    <string name="Add">+</string>
+    <string name="Subtract">-</string>
+    <string name="Intensity">Intensity = </string>
+    <string name="Power">Power</string>
+    <string name="Search">Search</string>
+    <string name="Connect">Connect</string>
+    <string name="Discover">Discover</string>
+    <string name="Min">Min</string>
+    <string name="Max">Max</string>
+</resources>
