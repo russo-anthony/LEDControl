@@ -1,0 +1,623 @@
+ARM GAS  C:\Users\Anthony\AppData\Local\Temp\cch2ulrV.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.main,"ax",%progbits
+  20              		.align	2
+  21              		.global	main
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	main, %function
+  25              	main:
+  26              	.LFB35:
+  27              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main.c        ****  * All Rights Reserved
+   5:main.c        ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main.c        ****  *
+   7:main.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main.c        ****  * WHICH IS THE PROPERTY OF your company.
+   9:main.c        ****  *
+  10:main.c        ****  * ========================================
+  11:main.c        **** */
+  12:main.c        **** #include "project.h"
+  13:main.c        **** 
+  14:main.c        **** uint8_t count = 255;
+  15:main.c        **** 
+  16:main.c        **** int main(void)
+  17:main.c        **** {
+  28              		.loc 1 17 0
+  29              		.cfi_startproc
+  30              		@ Volatile: function does not return.
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 10B5     		push	{r4, lr}
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 4, -8
+  36              		.cfi_offset 14, -4
+  18:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  37              		.loc 1 18 0
+  38              		.syntax divided
+  39              	@ 18 "main.c" 1
+ARM GAS  C:\Users\Anthony\AppData\Local\Temp\cch2ulrV.s 			page 2
+
+
+  40 0002 62B6     		CPSIE   i
+  41              	@ 0 "" 2
+  19:main.c        **** 
+  20:main.c        ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  21:main.c        **** 
+  22:main.c        ****     Clock_1_Start();
+  42              		.loc 1 22 0
+  43              		.thumb
+  44              		.syntax unified
+  45 0004 FF20     		movs	r0, #255
+  46 0006 FFF7FEFF 		bl	Clock_1_StartEx
+  47              	.LVL0:
+  23:main.c        ****     PWM_1_Start();
+  48              		.loc 1 23 0
+  49 000a FFF7FEFF 		bl	PWM_1_Start
+  50              	.LVL1:
+  24:main.c        ****     isr_1_Start();
+  51              		.loc 1 24 0
+  52 000e FFF7FEFF 		bl	isr_1_Start
+  53              	.LVL2:
+  54              	.L2:
+  25:main.c        ****     
+  26:main.c        ****     
+  27:main.c        ****     for(;;)
+  28:main.c        ****     {
+  29:main.c        ****         /* Place your application code here. */
+  30:main.c        ****         count--;
+  55              		.loc 1 30 0 discriminator 1
+  56 0012 054B     		ldr	r3, .L3
+  57 0014 1878     		ldrb	r0, [r3]
+  58 0016 0138     		subs	r0, r0, #1
+  59 0018 C0B2     		uxtb	r0, r0
+  60 001a 1870     		strb	r0, [r3]
+  31:main.c        ****         PWM_1_WriteCompare(count);
+  61              		.loc 1 31 0 discriminator 1
+  62 001c FFF7FEFF 		bl	PWM_1_WriteCompare
+  63              	.LVL3:
+  32:main.c        ****         CyDelay(10);
+  64              		.loc 1 32 0 discriminator 1
+  65 0020 0A20     		movs	r0, #10
+  66 0022 FFF7FEFF 		bl	CyDelay
+  67              	.LVL4:
+  68 0026 F4E7     		b	.L2
+  69              	.L4:
+  70              		.align	2
+  71              	.L3:
+  72 0028 00000000 		.word	.LANCHOR0
+  73              		.cfi_endproc
+  74              	.LFE35:
+  75              		.size	main, .-main
+  76              		.global	count
+  77              		.data
+  78              		.set	.LANCHOR0,. + 0
+  79              		.type	count, %object
+  80              		.size	count, 1
+  81              	count:
+  82 0000 FF       		.byte	-1
+ARM GAS  C:\Users\Anthony\AppData\Local\Temp\cch2ulrV.s 			page 3
+
+
+  83              		.text
+  84              	.Letext0:
+  85              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.1\\psoc creator\\import\\gnu\\arm\\5.4.
+  86              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.1\\psoc creator\\import\\gnu\\arm\\5.4.
+  87              		.file 4 "Generated_Source\\PSoC4/Clock_1.h"
+  88              		.file 5 "Generated_Source\\PSoC4/PWM_1.h"
+  89              		.file 6 "Generated_Source\\PSoC4/isr_1.h"
+  90              		.file 7 "Generated_Source\\PSoC4/CyLib.h"
+  91              		.section	.debug_info,"",%progbits
+  92              	.Ldebug_info0:
+  93 0000 41010000 		.4byte	0x141
+  94 0004 0400     		.2byte	0x4
+  95 0006 00000000 		.4byte	.Ldebug_abbrev0
+  96 000a 04       		.byte	0x4
+  97 000b 01       		.uleb128 0x1
+  98 000c B1000000 		.4byte	.LASF21
+  99 0010 0C       		.byte	0xc
+ 100 0011 1B000000 		.4byte	.LASF22
+ 101 0015 5E010000 		.4byte	.LASF23
+ 102 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 103 001d 00000000 		.4byte	0
+ 104 0021 00000000 		.4byte	.Ldebug_line0
+ 105 0025 02       		.uleb128 0x2
+ 106 0026 01       		.byte	0x1
+ 107 0027 06       		.byte	0x6
+ 108 0028 52010000 		.4byte	.LASF0
+ 109 002c 03       		.uleb128 0x3
+ 110 002d 70000000 		.4byte	.LASF9
+ 111 0031 02       		.byte	0x2
+ 112 0032 1D       		.byte	0x1d
+ 113 0033 37000000 		.4byte	0x37
+ 114 0037 02       		.uleb128 0x2
+ 115 0038 01       		.byte	0x1
+ 116 0039 08       		.byte	0x8
+ 117 003a 88000000 		.4byte	.LASF1
+ 118 003e 02       		.uleb128 0x2
+ 119 003f 02       		.byte	0x2
+ 120 0040 05       		.byte	0x5
+ 121 0041 B9010000 		.4byte	.LASF2
+ 122 0045 02       		.uleb128 0x2
+ 123 0046 02       		.byte	0x2
+ 124 0047 07       		.byte	0x7
+ 125 0048 3F010000 		.4byte	.LASF3
+ 126 004c 02       		.uleb128 0x2
+ 127 004d 04       		.byte	0x4
+ 128 004e 05       		.byte	0x5
+ 129 004f A1000000 		.4byte	.LASF4
+ 130 0053 02       		.uleb128 0x2
+ 131 0054 04       		.byte	0x4
+ 132 0055 07       		.byte	0x7
+ 133 0056 47000000 		.4byte	.LASF5
+ 134 005a 02       		.uleb128 0x2
+ 135 005b 08       		.byte	0x8
+ 136 005c 05       		.byte	0x5
+ 137 005d 00000000 		.4byte	.LASF6
+ 138 0061 02       		.uleb128 0x2
+ 139 0062 08       		.byte	0x8
+ARM GAS  C:\Users\Anthony\AppData\Local\Temp\cch2ulrV.s 			page 4
+
+
+ 140 0063 07       		.byte	0x7
+ 141 0064 59000000 		.4byte	.LASF7
+ 142 0068 04       		.uleb128 0x4
+ 143 0069 04       		.byte	0x4
+ 144 006a 05       		.byte	0x5
+ 145 006b 696E7400 		.ascii	"int\000"
+ 146 006f 02       		.uleb128 0x2
+ 147 0070 04       		.byte	0x4
+ 148 0071 07       		.byte	0x7
+ 149 0072 0E000000 		.4byte	.LASF8
+ 150 0076 03       		.uleb128 0x3
+ 151 0077 80000000 		.4byte	.LASF10
+ 152 007b 03       		.byte	0x3
+ 153 007c 18       		.byte	0x18
+ 154 007d 2C000000 		.4byte	0x2c
+ 155 0081 02       		.uleb128 0x2
+ 156 0082 04       		.byte	0x4
+ 157 0083 04       		.byte	0x4
+ 158 0084 7A000000 		.4byte	.LASF11
+ 159 0088 02       		.uleb128 0x2
+ 160 0089 08       		.byte	0x8
+ 161 008a 04       		.byte	0x4
+ 162 008b AA000000 		.4byte	.LASF12
+ 163 008f 02       		.uleb128 0x2
+ 164 0090 01       		.byte	0x1
+ 165 0091 08       		.byte	0x8
+ 166 0092 96000000 		.4byte	.LASF13
+ 167 0096 02       		.uleb128 0x2
+ 168 0097 08       		.byte	0x8
+ 169 0098 04       		.byte	0x4
+ 170 0099 AD010000 		.4byte	.LASF14
+ 171 009d 02       		.uleb128 0x2
+ 172 009e 04       		.byte	0x4
+ 173 009f 07       		.byte	0x7
+ 174 00a0 D3010000 		.4byte	.LASF15
+ 175 00a4 05       		.uleb128 0x5
+ 176 00a5 22000000 		.4byte	.LASF24
+ 177 00a9 01       		.byte	0x1
+ 178 00aa 10       		.byte	0x10
+ 179 00ab 68000000 		.4byte	0x68
+ 180 00af 00000000 		.4byte	.LFB35
+ 181 00b3 2C000000 		.4byte	.LFE35-.LFB35
+ 182 00b7 01       		.uleb128 0x1
+ 183 00b8 9C       		.byte	0x9c
+ 184 00b9 FC000000 		.4byte	0xfc
+ 185 00bd 06       		.uleb128 0x6
+ 186 00be 0A000000 		.4byte	.LVL0
+ 187 00c2 0D010000 		.4byte	0x10d
+ 188 00c6 D1000000 		.4byte	0xd1
+ 189 00ca 07       		.uleb128 0x7
+ 190 00cb 01       		.uleb128 0x1
+ 191 00cc 50       		.byte	0x50
+ 192 00cd 02       		.uleb128 0x2
+ 193 00ce 08       		.byte	0x8
+ 194 00cf FF       		.byte	0xff
+ 195 00d0 00       		.byte	0
+ 196 00d1 08       		.uleb128 0x8
+ARM GAS  C:\Users\Anthony\AppData\Local\Temp\cch2ulrV.s 			page 5
+
+
+ 197 00d2 0E000000 		.4byte	.LVL1
+ 198 00d6 18010000 		.4byte	0x118
+ 199 00da 08       		.uleb128 0x8
+ 200 00db 12000000 		.4byte	.LVL2
+ 201 00df 23010000 		.4byte	0x123
+ 202 00e3 08       		.uleb128 0x8
+ 203 00e4 20000000 		.4byte	.LVL3
+ 204 00e8 2E010000 		.4byte	0x12e
+ 205 00ec 09       		.uleb128 0x9
+ 206 00ed 26000000 		.4byte	.LVL4
+ 207 00f1 39010000 		.4byte	0x139
+ 208 00f5 07       		.uleb128 0x7
+ 209 00f6 01       		.uleb128 0x1
+ 210 00f7 50       		.byte	0x50
+ 211 00f8 01       		.uleb128 0x1
+ 212 00f9 3A       		.byte	0x3a
+ 213 00fa 00       		.byte	0
+ 214 00fb 00       		.byte	0
+ 215 00fc 0A       		.uleb128 0xa
+ 216 00fd 9B000000 		.4byte	.LASF25
+ 217 0101 01       		.byte	0x1
+ 218 0102 0E       		.byte	0xe
+ 219 0103 76000000 		.4byte	0x76
+ 220 0107 05       		.uleb128 0x5
+ 221 0108 03       		.byte	0x3
+ 222 0109 00000000 		.4byte	count
+ 223 010d 0B       		.uleb128 0xb
+ 224 010e C3010000 		.4byte	.LASF16
+ 225 0112 C3010000 		.4byte	.LASF16
+ 226 0116 04       		.byte	0x4
+ 227 0117 1D       		.byte	0x1d
+ 228 0118 0B       		.uleb128 0xb
+ 229 0119 27000000 		.4byte	.LASF17
+ 230 011d 27000000 		.4byte	.LASF17
+ 231 0121 05       		.byte	0x5
+ 232 0122 92       		.byte	0x92
+ 233 0123 0B       		.uleb128 0xb
+ 234 0124 33000000 		.4byte	.LASF18
+ 235 0128 33000000 		.4byte	.LASF18
+ 236 012c 06       		.byte	0x6
+ 237 012d 17       		.byte	0x17
+ 238 012e 0B       		.uleb128 0xb
+ 239 012f 9A010000 		.4byte	.LASF19
+ 240 0133 9A010000 		.4byte	.LASF19
+ 241 0137 05       		.byte	0x5
+ 242 0138 C3       		.byte	0xc3
+ 243 0139 0B       		.uleb128 0xb
+ 244 013a 3F000000 		.4byte	.LASF20
+ 245 013e 3F000000 		.4byte	.LASF20
+ 246 0142 07       		.byte	0x7
+ 247 0143 D9       		.byte	0xd9
+ 248 0144 00       		.byte	0
+ 249              		.section	.debug_abbrev,"",%progbits
+ 250              	.Ldebug_abbrev0:
+ 251 0000 01       		.uleb128 0x1
+ 252 0001 11       		.uleb128 0x11
+ 253 0002 01       		.byte	0x1
+ARM GAS  C:\Users\Anthony\AppData\Local\Temp\cch2ulrV.s 			page 6
+
+
+ 254 0003 25       		.uleb128 0x25
+ 255 0004 0E       		.uleb128 0xe
+ 256 0005 13       		.uleb128 0x13
+ 257 0006 0B       		.uleb128 0xb
+ 258 0007 03       		.uleb128 0x3
+ 259 0008 0E       		.uleb128 0xe
+ 260 0009 1B       		.uleb128 0x1b
+ 261 000a 0E       		.uleb128 0xe
+ 262 000b 55       		.uleb128 0x55
+ 263 000c 17       		.uleb128 0x17
+ 264 000d 11       		.uleb128 0x11
+ 265 000e 01       		.uleb128 0x1
+ 266 000f 10       		.uleb128 0x10
+ 267 0010 17       		.uleb128 0x17
+ 268 0011 00       		.byte	0
+ 269 0012 00       		.byte	0
+ 270 0013 02       		.uleb128 0x2
+ 271 0014 24       		.uleb128 0x24
+ 272 0015 00       		.byte	0
+ 273 0016 0B       		.uleb128 0xb
+ 274 0017 0B       		.uleb128 0xb
+ 275 0018 3E       		.uleb128 0x3e
+ 276 0019 0B       		.uleb128 0xb
+ 277 001a 03       		.uleb128 0x3
+ 278 001b 0E       		.uleb128 0xe
+ 279 001c 00       		.byte	0
+ 280 001d 00       		.byte	0
+ 281 001e 03       		.uleb128 0x3
+ 282 001f 16       		.uleb128 0x16
+ 283 0020 00       		.byte	0
+ 284 0021 03       		.uleb128 0x3
+ 285 0022 0E       		.uleb128 0xe
+ 286 0023 3A       		.uleb128 0x3a
+ 287 0024 0B       		.uleb128 0xb
+ 288 0025 3B       		.uleb128 0x3b
+ 289 0026 0B       		.uleb128 0xb
+ 290 0027 49       		.uleb128 0x49
+ 291 0028 13       		.uleb128 0x13
+ 292 0029 00       		.byte	0
+ 293 002a 00       		.byte	0
+ 294 002b 04       		.uleb128 0x4
+ 295 002c 24       		.uleb128 0x24
+ 296 002d 00       		.byte	0
+ 297 002e 0B       		.uleb128 0xb
+ 298 002f 0B       		.uleb128 0xb
+ 299 0030 3E       		.uleb128 0x3e
+ 300 0031 0B       		.uleb128 0xb
+ 301 0032 03       		.uleb128 0x3
+ 302 0033 08       		.uleb128 0x8
+ 303 0034 00       		.byte	0
+ 304 0035 00       		.byte	0
+ 305 0036 05       		.uleb128 0x5
+ 306 0037 2E       		.uleb128 0x2e
+ 307 0038 01       		.byte	0x1
+ 308 0039 3F       		.uleb128 0x3f
+ 309 003a 19       		.uleb128 0x19
+ 310 003b 03       		.uleb128 0x3
+ARM GAS  C:\Users\Anthony\AppData\Local\Temp\cch2ulrV.s 			page 7
+
+
+ 311 003c 0E       		.uleb128 0xe
+ 312 003d 3A       		.uleb128 0x3a
+ 313 003e 0B       		.uleb128 0xb
+ 314 003f 3B       		.uleb128 0x3b
+ 315 0040 0B       		.uleb128 0xb
+ 316 0041 27       		.uleb128 0x27
+ 317 0042 19       		.uleb128 0x19
+ 318 0043 49       		.uleb128 0x49
+ 319 0044 13       		.uleb128 0x13
+ 320 0045 8701     		.uleb128 0x87
+ 321 0047 19       		.uleb128 0x19
+ 322 0048 11       		.uleb128 0x11
+ 323 0049 01       		.uleb128 0x1
+ 324 004a 12       		.uleb128 0x12
+ 325 004b 06       		.uleb128 0x6
+ 326 004c 40       		.uleb128 0x40
+ 327 004d 18       		.uleb128 0x18
+ 328 004e 9742     		.uleb128 0x2117
+ 329 0050 19       		.uleb128 0x19
+ 330 0051 01       		.uleb128 0x1
+ 331 0052 13       		.uleb128 0x13
+ 332 0053 00       		.byte	0
+ 333 0054 00       		.byte	0
+ 334 0055 06       		.uleb128 0x6
+ 335 0056 898201   		.uleb128 0x4109
+ 336 0059 01       		.byte	0x1
+ 337 005a 11       		.uleb128 0x11
+ 338 005b 01       		.uleb128 0x1
+ 339 005c 31       		.uleb128 0x31
+ 340 005d 13       		.uleb128 0x13
+ 341 005e 01       		.uleb128 0x1
+ 342 005f 13       		.uleb128 0x13
+ 343 0060 00       		.byte	0
+ 344 0061 00       		.byte	0
+ 345 0062 07       		.uleb128 0x7
+ 346 0063 8A8201   		.uleb128 0x410a
+ 347 0066 00       		.byte	0
+ 348 0067 02       		.uleb128 0x2
+ 349 0068 18       		.uleb128 0x18
+ 350 0069 9142     		.uleb128 0x2111
+ 351 006b 18       		.uleb128 0x18
+ 352 006c 00       		.byte	0
+ 353 006d 00       		.byte	0
+ 354 006e 08       		.uleb128 0x8
+ 355 006f 898201   		.uleb128 0x4109
+ 356 0072 00       		.byte	0
+ 357 0073 11       		.uleb128 0x11
+ 358 0074 01       		.uleb128 0x1
+ 359 0075 31       		.uleb128 0x31
+ 360 0076 13       		.uleb128 0x13
+ 361 0077 00       		.byte	0
+ 362 0078 00       		.byte	0
+ 363 0079 09       		.uleb128 0x9
+ 364 007a 898201   		.uleb128 0x4109
+ 365 007d 01       		.byte	0x1
+ 366 007e 11       		.uleb128 0x11
+ 367 007f 01       		.uleb128 0x1
+ARM GAS  C:\Users\Anthony\AppData\Local\Temp\cch2ulrV.s 			page 8
+
+
+ 368 0080 31       		.uleb128 0x31
+ 369 0081 13       		.uleb128 0x13
+ 370 0082 00       		.byte	0
+ 371 0083 00       		.byte	0
+ 372 0084 0A       		.uleb128 0xa
+ 373 0085 34       		.uleb128 0x34
+ 374 0086 00       		.byte	0
+ 375 0087 03       		.uleb128 0x3
+ 376 0088 0E       		.uleb128 0xe
+ 377 0089 3A       		.uleb128 0x3a
+ 378 008a 0B       		.uleb128 0xb
+ 379 008b 3B       		.uleb128 0x3b
+ 380 008c 0B       		.uleb128 0xb
+ 381 008d 49       		.uleb128 0x49
+ 382 008e 13       		.uleb128 0x13
+ 383 008f 3F       		.uleb128 0x3f
+ 384 0090 19       		.uleb128 0x19
+ 385 0091 02       		.uleb128 0x2
+ 386 0092 18       		.uleb128 0x18
+ 387 0093 00       		.byte	0
+ 388 0094 00       		.byte	0
+ 389 0095 0B       		.uleb128 0xb
+ 390 0096 2E       		.uleb128 0x2e
+ 391 0097 00       		.byte	0
+ 392 0098 3F       		.uleb128 0x3f
+ 393 0099 19       		.uleb128 0x19
+ 394 009a 3C       		.uleb128 0x3c
+ 395 009b 19       		.uleb128 0x19
+ 396 009c 6E       		.uleb128 0x6e
+ 397 009d 0E       		.uleb128 0xe
+ 398 009e 03       		.uleb128 0x3
+ 399 009f 0E       		.uleb128 0xe
+ 400 00a0 3A       		.uleb128 0x3a
+ 401 00a1 0B       		.uleb128 0xb
+ 402 00a2 3B       		.uleb128 0x3b
+ 403 00a3 0B       		.uleb128 0xb
+ 404 00a4 00       		.byte	0
+ 405 00a5 00       		.byte	0
+ 406 00a6 00       		.byte	0
+ 407              		.section	.debug_aranges,"",%progbits
+ 408 0000 1C000000 		.4byte	0x1c
+ 409 0004 0200     		.2byte	0x2
+ 410 0006 00000000 		.4byte	.Ldebug_info0
+ 411 000a 04       		.byte	0x4
+ 412 000b 00       		.byte	0
+ 413 000c 0000     		.2byte	0
+ 414 000e 0000     		.2byte	0
+ 415 0010 00000000 		.4byte	.LFB35
+ 416 0014 2C000000 		.4byte	.LFE35-.LFB35
+ 417 0018 00000000 		.4byte	0
+ 418 001c 00000000 		.4byte	0
+ 419              		.section	.debug_ranges,"",%progbits
+ 420              	.Ldebug_ranges0:
+ 421 0000 00000000 		.4byte	.LFB35
+ 422 0004 2C000000 		.4byte	.LFE35
+ 423 0008 00000000 		.4byte	0
+ 424 000c 00000000 		.4byte	0
+ARM GAS  C:\Users\Anthony\AppData\Local\Temp\cch2ulrV.s 			page 9
+
+
+ 425              		.section	.debug_line,"",%progbits
+ 426              	.Ldebug_line0:
+ 427 0000 87010000 		.section	.debug_str,"MS",%progbits,1
+ 427      02005F01 
+ 427      00000201 
+ 427      FB0E0D00 
+ 427      01010101 
+ 428              	.LASF6:
+ 429 0000 6C6F6E67 		.ascii	"long long int\000"
+ 429      206C6F6E 
+ 429      6720696E 
+ 429      7400
+ 430              	.LASF8:
+ 431 000e 756E7369 		.ascii	"unsigned int\000"
+ 431      676E6564 
+ 431      20696E74 
+ 431      00
+ 432              	.LASF22:
+ 433 001b 6D61696E 		.ascii	"main.c\000"
+ 433      2E6300
+ 434              	.LASF24:
+ 435 0022 6D61696E 		.ascii	"main\000"
+ 435      00
+ 436              	.LASF17:
+ 437 0027 50574D5F 		.ascii	"PWM_1_Start\000"
+ 437      315F5374 
+ 437      61727400 
+ 438              	.LASF18:
+ 439 0033 6973725F 		.ascii	"isr_1_Start\000"
+ 439      315F5374 
+ 439      61727400 
+ 440              	.LASF20:
+ 441 003f 43794465 		.ascii	"CyDelay\000"
+ 441      6C617900 
+ 442              	.LASF5:
+ 443 0047 6C6F6E67 		.ascii	"long unsigned int\000"
+ 443      20756E73 
+ 443      69676E65 
+ 443      6420696E 
+ 443      7400
+ 444              	.LASF7:
+ 445 0059 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 445      206C6F6E 
+ 445      6720756E 
+ 445      7369676E 
+ 445      65642069 
+ 446              	.LASF9:
+ 447 0070 5F5F7569 		.ascii	"__uint8_t\000"
+ 447      6E74385F 
+ 447      7400
+ 448              	.LASF11:
+ 449 007a 666C6F61 		.ascii	"float\000"
+ 449      7400
+ 450              	.LASF10:
+ 451 0080 75696E74 		.ascii	"uint8_t\000"
+ 451      385F7400 
+ 452              	.LASF1:
+ARM GAS  C:\Users\Anthony\AppData\Local\Temp\cch2ulrV.s 			page 10
+
+
+ 453 0088 756E7369 		.ascii	"unsigned char\000"
+ 453      676E6564 
+ 453      20636861 
+ 453      7200
+ 454              	.LASF13:
+ 455 0096 63686172 		.ascii	"char\000"
+ 455      00
+ 456              	.LASF25:
+ 457 009b 636F756E 		.ascii	"count\000"
+ 457      7400
+ 458              	.LASF4:
+ 459 00a1 6C6F6E67 		.ascii	"long int\000"
+ 459      20696E74 
+ 459      00
+ 460              	.LASF12:
+ 461 00aa 646F7562 		.ascii	"double\000"
+ 461      6C6500
+ 462              	.LASF21:
+ 463 00b1 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 463      43313120 
+ 463      352E342E 
+ 463      31203230 
+ 463      31363036 
+ 464 00e4 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 464      20726576 
+ 464      6973696F 
+ 464      6E203233 
+ 464      37373135 
+ 465 0117 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 465      66756E63 
+ 465      74696F6E 
+ 465      2D736563 
+ 465      74696F6E 
+ 466              	.LASF3:
+ 467 013f 73686F72 		.ascii	"short unsigned int\000"
+ 467      7420756E 
+ 467      7369676E 
+ 467      65642069 
+ 467      6E7400
+ 468              	.LASF0:
+ 469 0152 7369676E 		.ascii	"signed char\000"
+ 469      65642063 
+ 469      68617200 
+ 470              	.LASF23:
+ 471 015e 433A5C55 		.ascii	"C:\\Users\\Anthony\\Documents\\PSoC Creator\\LightB"
+ 471      73657273 
+ 471      5C416E74 
+ 471      686F6E79 
+ 471      5C446F63 
+ 472 018c 4C455C74 		.ascii	"LE\\test.cydsn\000"
+ 472      6573742E 
+ 472      63796473 
+ 472      6E00
+ 473              	.LASF19:
+ 474 019a 50574D5F 		.ascii	"PWM_1_WriteCompare\000"
+ 474      315F5772 
+ 474      69746543 
+ARM GAS  C:\Users\Anthony\AppData\Local\Temp\cch2ulrV.s 			page 11
+
+
+ 474      6F6D7061 
+ 474      726500
+ 475              	.LASF14:
+ 476 01ad 6C6F6E67 		.ascii	"long double\000"
+ 476      20646F75 
+ 476      626C6500 
+ 477              	.LASF2:
+ 478 01b9 73686F72 		.ascii	"short int\000"
+ 478      7420696E 
+ 478      7400
+ 479              	.LASF16:
+ 480 01c3 436C6F63 		.ascii	"Clock_1_StartEx\000"
+ 480      6B5F315F 
+ 480      53746172 
+ 480      74457800 
+ 481              	.LASF15:
+ 482 01d3 73697A65 		.ascii	"sizetype\000"
+ 482      74797065 
+ 482      00
+ 483              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

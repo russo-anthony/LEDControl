@@ -1,0 +1,7 @@
+C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|cc0d2b0f-61b5-432c-b298-7d5989eeb637
+C:\Users\Anthony\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\Downloads ( 4.1).cyprj|e9e92b79-4512-4f6e-98a2-85ad8456537a
+C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|25d04af7-8adc-4a38-a908-565295906f85
+C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|547bfce6-4b27-4891-b42a-9d65e358b30f
+C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|fb400c2f-5622-4d77-88d0-3a536349f85d
+C:\Users\Anthony\Documents\PSoC Creator\LightBLE\LightBLE.cydsn\LightBLE.cyprj|0733aaf8-3f18-4d5d-ac72-ed7bebd7ffc9
+C:\Users\Anthony\Documents\PSoC Creator\LightBLE\test.cydsn\test.cyprj|e03d908c-c1c6-4727-89f4-1ae89ff54694

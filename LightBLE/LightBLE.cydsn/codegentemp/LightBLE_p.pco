@@ -1,0 +1,26 @@
+dont_use_io iocell 0 6
+dont_use_io iocell 0 7
+dont_use_io iocell 6 0
+dont_use_io iocell 6 1
+set_location "\controlPWM:PWMUDB:runmode_enable\" macrocell 1 0 0 3
+set_location "\controlPWM:PWMUDB:genblk8:stsreg\" statusicell 1 0 4 
+set_location "Net_56" macrocell 0 0 0 2
+set_location "\pwm:PWMUDB:sP8:pwmdp:u0\" datapathcell 0 0 2 
+set_location "\controlPWM:PWMUDB:prevCompare1\" macrocell 1 0 0 1
+set_location "\pwm:PWMUDB:prevCompare1\" macrocell 0 0 0 1
+set_location "\pwm:PWMUDB:genblk8:stsreg\" statusicell 0 0 4 
+set_location "\pwm:PWMUDB:runmode_enable\" macrocell 0 0 0 3
+set_location "\controlPWM:PWMUDB:sP8:pwmdp:u0\" datapathcell 1 0 2 
+set_location "\controlPWM:PWMUDB:status_0\" macrocell 1 0 0 2
+set_location "\pwm:PWMUDB:status_0\" macrocell 0 0 0 0
+set_location "\controlPWM:PWMUDB:status_2\" macrocell 1 0 1 0
+set_location "\pwm:PWMUDB:status_2\" macrocell 0 0 1 0
+set_location "Net_409" macrocell 1 0 0 0
+set_io "Digital_Out(0)" iocell 0 0
+set_location "\ble:cy_m0s8_ble\" p4blecell -1 -1 0
+set_location "ClockBlock" m0s8clockblockcell -1 -1 0
+set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
+set_location "\controlPWM:PWMUDB:genblk1:ctrlreg\" controlcell 1 0 6 
+set_location "\ble:bless_isr\" interrupt -1 -1 12
+set_location "\pwm:PWMUDB:genblk1:ctrlreg\" controlcell 0 0 6 
+set_io "blue(0)" iocell 3 7
